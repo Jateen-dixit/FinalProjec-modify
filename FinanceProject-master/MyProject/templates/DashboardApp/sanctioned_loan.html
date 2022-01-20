@@ -1,0 +1,39 @@
+{% extends "DashboardApp/base.html" %} {% block form %}
+{% load crispy_forms_tags %}
+
+      <div>
+        <form
+          method="post"
+          style="background-color: #d3e1e4; width:100%;height:100%; margin-top: 10%;"
+          class="jumbotron text-dark"
+
+        >
+          <br /><br />
+          <h3 style="text-align: center" class="mt-2 text-dark">Loan Sanction</h3>
+          {% csrf_token %}
+      
+          <div class="row mt-3">
+            <div class="col-6">{{ form.customer|as_crispy_field }}</div>
+            <div class="col-6">{{ form.required_loan|as_crispy_field }}</div>
+            <div class="col-6">{{ form.approved_loan|as_crispy_field }}</div>
+            <div class="col-6">{{ form.tenure|as_crispy_field }}</div>
+            <div class="col-6">{{ form.interest|as_crispy_field }}</div>
+      
+           
+          </div>
+          <!-- <input
+            type="submit"
+            value="Submit"
+            class="btn btn-dark btn-block mt-3"
+            style="margin-right: auto"
+          /> -->
+          <button class="btn btn-dark" style="text-align: center;"><a href="" >Submit</a></button>
+        </form>
+      
+      </div>
+   
+ 
+  
+
+  
+{% endblock form %}
